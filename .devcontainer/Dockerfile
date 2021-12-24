@@ -6,5 +6,5 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends gdb-multiarch openocd
 
 RUN cargo install cargo-binutils && \
-    rustup component add llvm-tools-preview
+    rustup component add llvm-tools-preview rustfmt clippy
 
