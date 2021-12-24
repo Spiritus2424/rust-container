@@ -13,16 +13,20 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"lldb.executable": "/usr/bin/lldb",
+		"terminal.integrated.defaultProfile.linux": "zsh",
 		// VS Code don't watch files under ./target
 		"files.watcherExclude": {
 			"**/target/**": true
-		}
+		},
+		"rust-analyzer.checkOnSave.command": "clippy"
 	},
 	"extensions": [
-		"rust-lang.rust",
-		"bungcip.better-toml",
+		"matklad.rust-analyzer",
 		"vadimcn.vscode-lldb",
-		"mutantdino.resourcemonitor"
+		"bungcip.better-toml",
+		"serayuzgur.crates",
+		"mutantdino.resourcemonitor",
+		"usernamehw.errorlens"
 	],
 	"remoteUser": "vscode"
 }
