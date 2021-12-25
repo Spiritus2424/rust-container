@@ -8,10 +8,16 @@
 	"runArgs": [
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
-		"seccomp=unconfined"
+		"seccomp=unconfined",
+		"--device-cgroup-rule=a 166:* rwm",
+		"--device-cgroup-rule=a 189:* rwm",
+		"--net=host"
 	],
 	"mounts": [
-		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
+		"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind",
+		"source=/dev/,target=/dev/,type=bind",
+		"source=/etc/udev/rules.d,target=/etc/udev/rules.d,type=bind",
+		"source=cargo,target=/usr/local/cargo,type=volume",
 	],
 	"settings": {
 		"lldb.executable": "/usr/bin/lldb",
@@ -27,7 +33,13 @@
 		"bungcip.better-toml",
 		"serayuzgur.crates",
 		"mutantdino.resourcemonitor",
-		"usernamehw.errorlens"
+		"usernamehw.errorlens",
+		"marus25.cortex-debug",
+		"mhutchie.git-graph",
+		"editorconfig.editorconfig",
+		"yzhang.markdown-all-in-one",
+		"tomoki1207.pdf"
 	],
-	"remoteUser": "vscode"
+	"remoteUser": "vscode",
+	"postStartCommand": "sudo sh ./.devcontainer/entrypoint.sh",
 }
