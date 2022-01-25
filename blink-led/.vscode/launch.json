@@ -14,12 +14,13 @@
 			"cwd": "${workspaceRoot}",
 			"preLaunchTask": "Cargo Build (debug)",
 			"runToEntryPoint": "main",
-			"executable": "./target/thumbv7m-none-eabi/debug/blink-led",
+			"executable": "./target/thumbv6m-none-eabi/debug/blink-led",
 			/* Run `cargo build --example hello` and uncomment this line to run semi-hosting example */
 			//"executable": "./target/thumbv7m-none-eabi/debug/examples/hello",
-			"cpu": "cortex-m3",
+			"cpu": "cortex-m0",
 			"machine": "lm3s6965evb",
 			"gdbPath": "/usr/bin/gdb-multiarch",
+			"svdFile": "${workspaceRoot}/.vscode/STM32F0x2.svd",
 		},
 		{
 			/* Configuration for the STM32F303 Discovery board */
